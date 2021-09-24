@@ -1,0 +1,5 @@
+package scraps
+
+class scraps {
+
+}
