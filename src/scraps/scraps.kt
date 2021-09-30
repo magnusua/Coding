@@ -40,3 +40,8 @@ fun <T> List<T>.rotate(distance: Int) =
     toList().also {
         Collections.rotate(it, distance)
     }
+//Write a program that reads a list of integers and outputs the number of triples in the list.
+//1 number = length of array numbers
+fun main5() = println(List(readLine()!!.toInt()) { readLine()!!.toInt() }.run {
+    (0..this.size - 3).count { this[it] + 1 == this[it + 1] && this[it + 1] + 1 == this[it + 2] }
+})
