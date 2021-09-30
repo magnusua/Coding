@@ -1,9 +1,9 @@
 package scraps
-
+import java.util.Collections
 class scraps {
 
 }
-fun main() {
+fun main2() {
     var inputArray: Array<Array<String>> = arrayOf()
     val n = readLine()!!.toInt()
     for (i in 0 until n) {
@@ -14,7 +14,7 @@ fun main() {
     println("${inputArray.last().first()} ${inputArray.last().last()}")
 }
 
-fun main() = when (readLine()!!.toInt()) {
+fun main3() = when (readLine()!!.toInt()) {
     in 1..4 -> "few"
     in 5..9 -> "several"
     in 10..19 -> "pack"
@@ -28,12 +28,14 @@ fun main() = when (readLine()!!.toInt()) {
 }.let { println(it) }
 
 
-import java.util.Collections
+
 
 //Write a program that reads an A list of integers and cyclically shifts the elements of the list to the right:
-fun main() = println(List(readLine()!!.toInt()) { readLine()!!.toInt() }
+//1 number = length of array numbers
+fun main4() = println(List(readLine()!!.toInt()) { readLine()!!.toInt() }
     .rotate(1).joinToString().replace(",", ""))
 
+//import java.util.Collections
 fun <T> List<T>.rotate(distance: Int) =
     toList().also {
         Collections.rotate(it, distance)
