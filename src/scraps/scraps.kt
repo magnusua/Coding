@@ -1,7 +1,7 @@
 package scraps
 
 
-import java.util.Collections
+import java.util.*
 import kotlin.math.abs
 
 class scraps {
@@ -98,3 +98,12 @@ fun main11() = println(mutableListOf(readLine()!!.toInt()).run {
     )
     this.joinToString(" ")
 })
+
+
+fun <T> moveItem(sourceIndex: Int, targetIndex: Int, list: List<T?>) {
+    if (sourceIndex <= targetIndex) {
+        Collections.rotate(list.subList(sourceIndex, targetIndex + 1), -1)
+    } else {
+        Collections.rotate(list.subList(targetIndex, sourceIndex + 1), 1)
+    }
+}
