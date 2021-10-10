@@ -3,6 +3,7 @@ package scraps
 
 import java.util.*
 import kotlin.math.abs
+import java.util.Collections
 
 class scraps {
 
@@ -36,7 +37,10 @@ fun main3() = when (readLine()!!.toInt()) {
 //Write a program that reads an A list of integers and cyclically shifts the elements of the list to the right:
 //1 number = length of array numbers
 fun main4() = println(List(readLine()!!.toInt()) { readLine()!!.toInt() }
-    .rotate(1).joinToString().replace(",", ""))
+    .rotate(1).joinToString(" "))
+
+fun main41() = MutableList(readLine()!!.toInt()) { readLine()!!.toInt() }
+    .rotate(readLine()!!.toInt()).joinToString(" ").let(::println)
 
 //import java.util.Collections
 fun <T> List<T>.rotate(distance: Int) =
@@ -107,3 +111,11 @@ fun <T> moveItem(sourceIndex: Int, targetIndex: Int, list: List<T?>) {
         Collections.rotate(list.subList(targetIndex, sourceIndex + 1), 1)
     }
 }
+
+
+//Move the first N characters  ( s.substring(n) + s.substring(0, n))
+fun main12() = readLine()!!.split(" ").let {
+    it.first().drop(it.last().toInt()) + it.first().take(it.last().toInt())
+}.let(::println)
+
+
