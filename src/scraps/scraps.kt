@@ -149,3 +149,16 @@ fun price(old: Int = 5, passed: Int = 100_000, speed: Int = 120, auto: Int = 0):
     return price
 }
 
+//import kotlin.math.abs
+//check speedLimit
+
+fun main14(args: Array<String>) = speedLimit(readLine()!!.toInt(), readLine()!!.toIntOrNull() ?: 60)
+
+fun speedLimit(speed: Int, speedLimit: Int = 60) {
+    val exceeds = speedLimit - speed
+    println(
+        if (exceeds >= 0) {
+            "Within the limit"
+        } else "Exceeds the limit by ${abs(exceeds)} kilometers per hour"
+    )
+}
