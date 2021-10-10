@@ -118,4 +118,34 @@ fun main12() = readLine()!!.split(" ").let {
     it.first().drop(it.last().toInt()) + it.first().take(it.last().toInt())
 }.let(::println)
 
+//function should take parameters: how old a car is, how many kilometers this car passed,
+// the maximum speed, and whether this car has automatic transmission.
+fun main13(args: Array<String>) {
+    println(
+        when (readLine()!!.toString()) {
+            "old" -> price(old = readLine()!!.toInt())
+            "passed" -> price(passed = readLine()!!.toInt())
+            "speed" -> price(speed = readLine()!!.toInt())
+            "auto" -> price(auto = readLine()!!.toInt())
+            else -> "Input Error"
+        }
+    )
+}
+
+private const val DEFAULT_INITIAL_PRICE = 20_000
+private const val DECREASE_PER_YEAR = 2000
+private const val SPEED_THRESHOLD = 120
+private const val SPEED_PER_HOUR_COST = 100
+private const val TEN_THOUSAND_PASSED_KM_COST = 200
+private const val TRANSMISSION_COST = 1500
+
+fun price(old: Int = 5, passed: Int = 100_000, speed: Int = 120, auto: Int = 0): Int {
+    var price = DEFAULT_INITIAL_PRICE
+    price -= old * DECREASE_PER_YEAR
+    price -= passed / 10_000 * TEN_THOUSAND_PASSED_KM_COST
+    if (auto == 1) price += TRANSMISSION_COST
+    if (speed > SPEED_THRESHOLD) price += SPEED_PER_HOUR_COST * (speed - SPEED_THRESHOLD)
+    if (speed < SPEED_THRESHOLD) price -= SPEED_PER_HOUR_COST * (SPEED_THRESHOLD - speed)
+    return price
+}
 
