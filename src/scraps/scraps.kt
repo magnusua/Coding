@@ -99,7 +99,7 @@ fun main11() = println(mutableListOf(readLine()!!.toInt()).run {
     this.joinToString(" ")
 })
 
-
+//change position of numbers
 fun <T> moveItem(sourceIndex: Int, targetIndex: Int, list: List<T?>) {
     if (sourceIndex <= targetIndex) {
         Collections.rotate(list.subList(sourceIndex, targetIndex + 1), -1)
