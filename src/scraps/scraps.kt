@@ -162,3 +162,10 @@ fun speedLimit(speed: Int, speedLimit: Int = 60) {
         } else "Exceeds the limit by ${abs(exceeds)} kilometers per hour"
     )
 }
+
+// program is to read the answer number from the standard input and output the result: Yes!, No! or Unknown number.
+fun main15() = when (readLine()!!.toInt()) {
+    1, in 3..4 -> "No!"
+    2 -> "Yes!"
+    else -> "Unknown number"
+}.let { println(it) }
