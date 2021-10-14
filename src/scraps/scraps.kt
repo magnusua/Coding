@@ -169,3 +169,7 @@ fun main15() = when (readLine()!!.toInt()) {
     2 -> "Yes!"
     else -> "Unknown number"
 }.let { println(it) }
+
+//import kotlin.math.abs
+
+fun Int.lastDigit(): Int = abs(this) % 10
