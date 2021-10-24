@@ -163,6 +163,9 @@ fun speedLimit(speed: Int, speedLimit: Int = 60) {
     )
 }
 
+//min number of sequence
+fun main() = List(readLine()!!.toInt()) { readLine()!!.toInt() }.minOrNull().let(::println)
+
 // program is to read the answer number from the standard input and output the result: Yes!, No! or Unknown number.
 fun main15() = when (readLine()!!.toInt()) {
     1, in 3..4 -> "No!"
