@@ -176,3 +176,9 @@ fun main15() = when (readLine()!!.toInt()) {
 //import kotlin.math.abs
 
 fun Int.lastDigit(): Int = abs(this) % 10
+
+fun printReversedText() = readLine().toString().reversed().let(::print)
+
+fun splitString() = readLine()!!.split(" +".toRegex(), readLine()!!.toInt()).let {
+    it.forEach { str -> println(str) }
+}
