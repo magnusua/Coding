@@ -182,3 +182,18 @@ fun printReversedText() = readLine().toString().reversed().let(::print)
 fun splitString() = readLine()!!.split(" +".toRegex(), readLine()!!.toInt()).let {
     it.forEach { str -> println(str) }
 }
+
+
+open class Transport(val cost: Int) {
+    open fun getFullInfo(): String = "$$cost cost"
+
+    fun getTax(): String = "$${(cost * 0.25).roundToInt()} tax"
+}
+
+open class WaterTransport(cost: Int, val color: String) : Transport(cost) {
+    open fun getColorInfo(): String = "$color color"
+
+    fun getWaterTax(): String = "$${(cost * 0.3).roundToInt()} tax"
+
+    override fun getFullInfo(): String = "$$cost cost, $color color"
+}
